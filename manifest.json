@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "version": "1.0.0",
+    "name": "Esconder Contatos",
+    "description": "Esconde os contatos no Wpp Web",
+    "author": "Danilo Aparecido Namitala",
+    "content_security_policy": "default-src 'self'",
+
+    "browser_action": {
+        "default_title": "Contatos",
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    },
+
+    "content_scripts": [{
+        "js": ["content.js"],
+        "matches": ["https://web.whatsapp.com/*"]
+    }],
+
+    "permissions": ["tabs"]
+}
