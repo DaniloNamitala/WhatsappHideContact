@@ -1,15 +1,15 @@
 # HIDE CONTACTS CHROME EXTENSION FOR WHATSAPP WEB
 
-This is a simple extension that can hide you contacts bar in whatsapp web.
-it run on Microsoft Edge and mus run on anothers Chromium based browsers too.
+With this extension you can hide and display your whatsapp web contacts bar. Setting the mode auto its hide when you move the mouse cursor to the left corner and hide when the cursor leave the bar.
 
-## HOW TO INSTALL ON CHROME
+Compatible with **Chrome**, **Opera**, **Firefox** and **MS Edge**.
 
-* Clone the repository `https://github.com/DaniloNamitala/WhatsappHideContact`
-* Open your chrome
-* Paste the url `chrome://extensions` on your tab
-* Enable 'Developer mode'
-* Drag the folder to chrome or click in 'Load unpacked' and select the project folder
+## Instalation
 
+Chrome/opera/edge | Firefox 
+------ | ------ 
+Go to `browser_name://extensions` |  Go to `about:debugging#/addons` 
+Enable "Developer Mode" | Click "Load temporary Add-on" 
+Drag and drop the folder or click "Load Unpacked" and select it | Select the file "manifest.json" 
+  
 *NEW FEATURES COMING SOON*
-
