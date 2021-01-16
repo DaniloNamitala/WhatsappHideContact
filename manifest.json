@@ -17,5 +17,5 @@
         "matches": ["https://web.whatsapp.com/*"]
     }],
 
-    "permissions": ["tabs"]
+    "permissions": ["tabs", "storage"]
 }

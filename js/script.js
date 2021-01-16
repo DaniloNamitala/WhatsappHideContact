@@ -1,30 +1,30 @@
-var switch_btn = document.getElementById("checkbox_switch"); 
-
+var select_option = document.getElementById("select");
 chrome.tabs.query({url:["https://web.whatsapp.com/*"], currentWindow: true}, function(tabs) {
     if(tabs[0] != null){
         document.getElementById("footer").classList.add("hide_footer");
-        document.getElementById("div_body").disabled = false;
-        chrome.tabs.sendMessage(tabs[0].id, {type:"state"}, function(response){
-            if(response == "hidden")
-                switch_btn.checked = true;
+        document.getElementById("select").enabled = false;
+        chrome.storage.local.get(['action'], function(result){
+            if(result.action){
+                select_option.value = result.action;
+            }
+            sendAction(select_option.value);
         });
     }else{
         document.getElementById("footer").classList.remove("hide_footer");
-        document.getElementById("div_body").disabled = true;
+        document.getElementById("select").disabled = true;
     }
 });
 
-var action = "hide";
+select_option.addEventListener("change",function(){
+    let action = select_option.value;
+    chrome.storage.local.set({"action":action}, null);
+    sendAction(action);
+});
 
-switch_btn.addEventListener("click",function(){
-    if(switch_btn.checked == true)
-        action = "hide";
-    else
-        action = "show";
-
+function sendAction(action){
     chrome.tabs.query({url:["https://web.whatsapp.com/*"], currentWindow: true}, function(tabs){
         if(tabs[0] != null){
             chrome.tabs.sendMessage(tabs[0].id, {type:action}, null);
         }
     });
-});
+}

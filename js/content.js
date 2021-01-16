@@ -1,17 +1,50 @@
+var auto = false;
+var container;
 chrome.runtime.onMessage.addListener(
     function(message, sender, sendResponse) {
-        var container = document.getElementsByClassName('i5ly3 _2NwAr')[1];
-        if(message.type == "hide"){
-            container.style.display = 'none';
-            sendResponse("hidden");
-        }else if(message.type == "show"){
-            container.style.display = '';
-            sendResponse("visible");
-        }else if(message.type == "state"){
-            if(container.style.display == 'none')
-                sendResponse("hidden");
-            else
-                sendResponse("visible");
+        switch (message.type) {
+            case "hidden":
+                container.style.display = 'none';
+                auto = false;
+                break;
+            case "visible":
+                container.style.display = '';
+                auto = false;
+                break;
+            case "auto":
+                auto = true;
+                break;
+            default:
+                break;
         }
     }
 );
+
+var interval = setInterval(function(){
+    container = document.getElementsByClassName('i5ly3 _2NwAr')[1];
+    if(container){
+        const barra = document.createElement('div');
+        barra.id = 'barra_lateral';
+        barra.style.height = "100%";
+        barra.style.width = "20px";
+        barra.style.position = 'fixed';
+        barra.style.top = 0;
+        barra.style.left = 0;
+        barra.style.zIndex = 999;
+        const menulat = document.getElementsByClassName('i5ly3 _2NwAr')[1];
+        menulat.addEventListener('mouseleave', function(){
+            if(auto)
+                menulat.style.display = 'none';
+        });
+
+        barra.addEventListener("mouseenter",function(){
+            console.log("chamou");
+            if(menulat.style.display == 'none' & auto)
+                menulat.style.display = '';
+            
+        });
+        document.querySelector("body").appendChild(barra);
+        clearInterval(interval);
+    }
+    
+},1000);
