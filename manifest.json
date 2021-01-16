@@ -1,17 +1,18 @@
 {
     "manifest_version": 2,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "Esconder Contatos",
-    "description": "Esconde os contatos no Wpp Web",
+    "description": "Torne a barra de contatos do whatsapp web oculta ou um menu dinamico",
     "author": "Danilo Aparecido Namitala",
-    "content_security_policy": "default-src 'self'",
 
     "browser_action": {
         "default_title": "Contatos",
         "default_popup": "index.html",
         "default_icon": "img/icon.png"
     },
-
+    "icons":{
+        "128":"img/icon.png"
+    },
     "content_scripts": [{
         "js": ["js/content.js"],
         "matches": ["https://web.whatsapp.com/*"]
