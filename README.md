@@ -14,7 +14,8 @@ Drag and drop the folder or click "Load Unpacked" and select it | Select the fil
 
 # Usage
 
-Open the pop-up and select your prefered option
+Open the pop-up and select your prefered option.
+
 ![pop-up options](img/pop-up.png)
 
 If you chose the option *auto* the contacts list will hide automaticaly and when you touch the left corner with the cursor it will display
