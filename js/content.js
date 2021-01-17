@@ -47,7 +47,7 @@ function autoHide(){
     const barra = document.createElement('div');
     barra.id = 'barra_lateral';
     barra.style.height = "100%";
-    barra.style.width = "20px";
+    barra.style.width = "15px";
     barra.style.position = 'fixed';
     barra.style.top = 0;
     barra.style.left = 0;
