@@ -2,7 +2,7 @@ var auto = false;
 var container;
 
 function execute(action){
-    container = document.getElementsByClassName('i5ly3 _2NwAr')[1];
+    container = document.getElementsByClassName('_1Flk2 _2DPZK')[1];
     switch (action) {
         case "hidden":
             container.style.display = 'none';
@@ -27,7 +27,7 @@ chrome.runtime.onMessage.addListener(
 );
 
 let interval = setInterval(()=>{
-    container = document.getElementsByClassName('i5ly3 _2NwAr')[1];
+    container = document.getElementsByClassName('_1Flk2 _2DPZK')[1];
     if(container){
         chrome.storage.local.get(['action'], function(result){
             if(result.action){
@@ -42,7 +42,7 @@ let interval = setInterval(()=>{
 
 function autoHide(){
     auto = true;
-    container = document.getElementsByClassName('i5ly3 _2NwAr')[1];
+    container = document.getElementsByClassName('_1Flk2 _2DPZK')[1];
     container.style.display = 'none';
     const barra = document.createElement('div');
     barra.id = 'barra_lateral';
@@ -52,7 +52,7 @@ function autoHide(){
     barra.style.top = 0;
     barra.style.left = 0;
     barra.style.zIndex = 999;
-    const menulat = document.getElementsByClassName('i5ly3 _2NwAr')[1];
+    const menulat = document.getElementsByClassName('_1Flk2 _2DPZK')[1];
     menulat.addEventListener('mouseleave', function(){
         if(auto)
             menulat.style.display = 'none';
